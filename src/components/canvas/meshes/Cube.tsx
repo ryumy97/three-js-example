@@ -1,12 +1,8 @@
-import { useBox } from '@react-three/cannon';
-import React, { useRef } from 'react';
-import { Mesh } from 'three';
+import React from 'react';
 
 const Cube: React.FC = (props) => {
-  const [ref] = useBox(() => ({ mass: 1, position: [0, 5, 0], ...props }), useRef<Mesh>(null));
-
   return (
-    <mesh ref={ref} castShadow>
+    <mesh castShadow position={[0, 5, 0]}>
       <boxGeometry />
       <meshStandardMaterial />
     </mesh>

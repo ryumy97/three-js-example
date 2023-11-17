@@ -1,7 +1,7 @@
 import { Triplet } from '@react-three/cannon';
 import { Instances } from '@react-three/drei';
 import React from 'react';
-import CubeInstance from './CubeInstance';
+import CannonCubeInstance from './CannonCubeInstance';
 import { Color } from '@react-three/fiber';
 import { getRandomItem } from '@/helpers/global';
 
@@ -19,7 +19,7 @@ const data = Array(500)
     color: getRandomItem(['#6363F3', '#52F2CC', '#DFF793']),
   }));
 
-const CubeInstances: React.FC = (props) => {
+const CannonCubeInstances: React.FC = (props) => {
   return (
     <Instances
       limit={500} // Optional: max amount of items (for calculating buffer size)
@@ -28,10 +28,10 @@ const CubeInstances: React.FC = (props) => {
       <boxGeometry />
       <meshStandardMaterial />
       {data.map(({ position, rotation, scale, color }, index) => {
-        return <CubeInstance key={index} color={color} scale={scale} position={position} rotation={rotation} />;
+        return <CannonCubeInstance key={index} color={color} scale={scale} position={position} rotation={rotation} />;
       })}
     </Instances>
   );
 };
 
-export default CubeInstances;
+export default CannonCubeInstances;

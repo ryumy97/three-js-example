@@ -1,15 +1,15 @@
 import { Physics } from '@react-three/cannon';
 import React from 'react';
 import Common from '../environments/Common';
-import Cube from '../meshes/Cube';
-import Plane from '../meshes/Plane';
+import CannonCube from '../meshes/CannonCube';
+import CannonPlane from '../meshes/CannonPlane';
 
 const CannonExample: React.FC = () => {
   return (
     <>
       <Physics>
-        <Cube></Cube>
-        <Plane rotation={[-Math.PI / 2, 0, 0]} />
+        <CannonCube></CannonCube>
+        <CannonPlane rotation={[-Math.PI / 2, 0, 0]} />
       </Physics>
       <Common />
     </>

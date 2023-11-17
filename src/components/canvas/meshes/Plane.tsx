@@ -1,18 +1,9 @@
-import { Triplet, useBox, usePlane } from '@react-three/cannon';
-import { button, useControls } from 'leva';
-import React, { useRef, useState } from 'react';
-import { Mesh } from 'three';
+import React from 'react';
 
-type Props = {
-  rotation: Triplet;
-};
-
-const Plane: React.FC<Props> = (props) => {
-  const [ref] = useBox(() => ({ type: 'Static', ...props, args: [20, 20, 1] }), useRef<Mesh>(null));
-
+const Plane: React.FC = (props) => {
   return (
-    <mesh ref={ref} receiveShadow>
-      <boxGeometry args={[20, 20]} />
+    <mesh receiveShadow position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+      <planeGeometry args={[20, 20]} />
       <meshStandardMaterial color='pink' />
     </mesh>
   );

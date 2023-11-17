@@ -8,7 +8,7 @@ type Props = BoxProps & {
   scale: number;
 };
 
-const CubeInstance: React.FC<Props> = (props) => {
+const CannonCubeInstance: React.FC<Props> = (props) => {
   const { position, rotation, color, scale } = props;
 
   const [ref, api] = useBox(() => ({ mass: 1, position, rotation, args: [scale, scale, scale] }), useRef<Mesh>(null));
@@ -26,4 +26,4 @@ const CubeInstance: React.FC<Props> = (props) => {
   return <Instance ref={ref} castShadow {...{ position, rotation, color, scale }}></Instance>;
 };
 
-export default CubeInstance;
+export default CannonCubeInstance;
