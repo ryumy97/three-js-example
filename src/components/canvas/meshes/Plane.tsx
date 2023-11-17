@@ -1,5 +1,6 @@
-import { Triplet, usePlane } from '@react-three/cannon';
-import React, { useRef } from 'react';
+import { Triplet, useBox, usePlane } from '@react-three/cannon';
+import { button, useControls } from 'leva';
+import React, { useRef, useState } from 'react';
 import { Mesh } from 'three';
 
 type Props = {
@@ -7,12 +8,12 @@ type Props = {
 };
 
 const Plane: React.FC<Props> = (props) => {
-  const [ref] = usePlane(() => ({ type: 'Static', ...props }), useRef<Mesh>(null));
+  const [ref] = useBox(() => ({ type: 'Static', ...props, args: [20, 20, 1] }), useRef<Mesh>(null));
 
   return (
     <mesh ref={ref} receiveShadow>
-      <planeGeometry args={[10, 10]} />
-      <shadowMaterial color='#171717' />
+      <boxGeometry args={[20, 20]} />
+      <meshStandardMaterial color='pink' />
     </mesh>
   );
 };

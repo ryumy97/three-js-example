@@ -1,11 +1,13 @@
-'use client'
+'use client';
 
-import { useRef } from 'react'
-import dynamic from 'next/dynamic'
-const Scene = dynamic(() => import('@/components/canvas/Scene'), { ssr: false })
+import dynamic from 'next/dynamic';
+import { useRef } from 'react';
+import VirtualDOM from './VirtualDOM';
+
+const Scene = dynamic(() => import('@/components/canvas/Scene'), { ssr: false });
 
 const Layout = ({ children }) => {
-  const ref = useRef()
+  const ref = useRef();
 
   return (
     <div
@@ -30,9 +32,11 @@ const Layout = ({ children }) => {
         }}
         eventSource={ref}
         eventPrefix='client'
+        shadows
       />
+      <VirtualDOM />
     </div>
-  )
-}
+  );
+};
 
-export { Layout }
+export { Layout };

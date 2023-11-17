@@ -10,8 +10,8 @@ const PhysicsGroup: React.FC = () => {
       <Physics>
         <Cube></Cube>
         <Plane rotation={[-Math.PI / 2, 0, 0]} />
-        <Common />
       </Physics>
+      <Common />
     </>
   );
 };
