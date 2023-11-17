@@ -1,14 +1,14 @@
 import { Physics } from '@react-three/cannon';
 import React from 'react';
 import Common from '../environments/Common';
-import Cube from '../meshes/Cube';
+import CubeInstances from '../meshes/CubeInstances';
 import Plane from '../meshes/Plane';
 
-const PhysicsGroup: React.FC = () => {
+const CannonInstances: React.FC = () => {
   return (
     <>
       <Physics>
-        <Cube></Cube>
+        <CubeInstances></CubeInstances>
         <Plane rotation={[-Math.PI / 2, 0, 0]} />
       </Physics>
       <Common />
@@ -16,4 +16,4 @@ const PhysicsGroup: React.FC = () => {
   );
 };
 
-export default PhysicsGroup;
+export default CannonInstances;

@@ -5,7 +5,7 @@ import CubeInstance from './CubeInstance';
 import { Color } from '@react-three/fiber';
 import { getRandomItem } from '@/helpers/global';
 
-const data = Array(300)
+const data = Array(500)
   .fill(null)
   .map<{
     scale: number;
@@ -22,8 +22,8 @@ const data = Array(300)
 const CubeInstances: React.FC = (props) => {
   return (
     <Instances
-      limit={300} // Optional: max amount of items (for calculating buffer size)
-      range={300} // Optional: draw-range
+      limit={500} // Optional: max amount of items (for calculating buffer size)
+      range={500} // Optional: draw-range
     >
       <boxGeometry />
       <meshStandardMaterial />

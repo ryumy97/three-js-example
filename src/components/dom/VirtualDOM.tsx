@@ -8,8 +8,8 @@ const VirtualDOM: React.FC = () => {
   const [{ example }, set] = useControls(() => ({
     example: {
       options: {
-        box: '/',
-        instances: '/instances',
+        home: '/',
+        'cannon instances': '/cannon/instances',
       },
     },
   }));

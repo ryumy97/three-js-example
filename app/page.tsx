@@ -19,7 +19,7 @@ const View = dynamic(() => import('@/components/canvas/View').then((mod) => mod.
   ),
 });
 
-const PhysicsGroup = dynamic(() => import('@/components/canvas/groups/PhysicsGroup').then((mod) => mod), {
+const CannonExample = dynamic(() => import('@/components/canvas/groups/CannonExample').then((mod) => mod), {
   ssr: false,
 });
 
@@ -29,7 +29,7 @@ export default function Page() {
       <div className='relative h-screen w-screen'>
         <View className='absolute inset-0' orbit>
           <Suspense>
-            <PhysicsGroup />
+            <CannonExample />
           </Suspense>
         </View>
       </div>
