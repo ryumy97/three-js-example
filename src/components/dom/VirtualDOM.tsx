@@ -11,6 +11,7 @@ const VirtualDOM: React.FC = () => {
         home: '/',
         'cannon instances': '/cannon/instances',
         rapier: '/rapier/example',
+        'rapier instances': '/rapier/instances',
       },
     },
   }));
