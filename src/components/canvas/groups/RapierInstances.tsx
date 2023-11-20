@@ -14,9 +14,7 @@ const RapierInstances: React.FC = () => {
     <>
       <Suspense>
         <Physics debug={debug}>
-          {/* <RigidBody> */}
           <CubeInstances />
-          {/* </RigidBody> */}
           <RigidBody>
             <Plane />
           </RigidBody>

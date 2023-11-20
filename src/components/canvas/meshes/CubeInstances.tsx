@@ -47,7 +47,6 @@ const CubeInstances: React.FC = (props) => {
   useFrame(() => {
     rigidBodies.current.map((api, index) => {
       if (api.translation().y < -10) {
-        const vector = new THREE.Vector3();
         api.setTranslation(
           {
             x: (Math.random() - 0.5) * 10,
