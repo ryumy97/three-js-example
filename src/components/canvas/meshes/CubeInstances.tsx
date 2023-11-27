@@ -84,7 +84,13 @@ const CubeInstances: React.FC = (props) => {
       colliders='cuboid'
       colliderNodes={[<CuboidCollider key={'cuboid'} args={[0.5, 0.5, 0.5]} />]}
     >
-      <instancedMesh ref={meshes} args={[undefined, undefined, data.length]} count={data.length} castShadow>
+      <instancedMesh
+        ref={meshes}
+        args={[undefined, undefined, data.length]}
+        count={data.length}
+        castShadow
+        receiveShadow
+      >
         <boxGeometry />
         <meshStandardMaterial />
       </instancedMesh>

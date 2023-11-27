@@ -6,7 +6,7 @@ type Props = MeshProps;
 
 const TorusKnot = forwardRef<THREE.Mesh<THREE.TorusKnotGeometry, THREE.MeshStandardMaterial>, Props>((props, ref) => {
   return (
-    <mesh castShadow ref={ref} {...props}>
+    <mesh castShadow receiveShadow ref={ref} {...props}>
       <torusKnotGeometry />
       <meshStandardMaterial />
     </mesh>

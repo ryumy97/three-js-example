@@ -22,6 +22,8 @@ const data = Array(500)
 const CannonCubeInstances: React.FC = (props) => {
   return (
     <Instances
+      castShadow
+      receiveShadow
       limit={500} // Optional: max amount of items (for calculating buffer size)
       range={500} // Optional: draw-range
     >
