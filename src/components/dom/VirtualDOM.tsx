@@ -8,11 +8,12 @@ const VirtualDOM: React.FC = () => {
   const [{ example }, set] = useControls(() => ({
     example: {
       options: {
-        home: '/',
+        cannon: '/',
         'cannon instances': '/cannon/instances',
         rapier: '/rapier/example',
         'rapier instances': '/rapier/instances',
         'rapier collisions': '/rapier/collisions',
+        'rapier attractors': '/rapier/attractors',
       },
     },
   }));

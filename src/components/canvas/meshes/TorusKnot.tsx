@@ -2,13 +2,17 @@ import { MeshProps, MeshStandardMaterialProps, TorusKnotGeometryProps } from '@r
 import React, { forwardRef } from 'react';
 import * as THREE from 'three';
 
-type Props = MeshProps;
+type Props = MeshProps & {
+  color?: THREE.Color;
+};
 
 const TorusKnot = forwardRef<THREE.Mesh<THREE.TorusKnotGeometry, THREE.MeshStandardMaterial>, Props>((props, ref) => {
+  const { color } = props;
+
   return (
     <mesh castShadow receiveShadow ref={ref} {...props}>
       <torusKnotGeometry />
-      <meshStandardMaterial />
+      <meshStandardMaterial color={color} />
     </mesh>
   );
 });

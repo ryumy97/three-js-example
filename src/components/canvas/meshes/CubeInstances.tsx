@@ -78,12 +78,7 @@ const CubeInstances: React.FC = (props) => {
   });
 
   return (
-    <InstancedRigidBodies
-      ref={rigidBodies}
-      instances={instances}
-      colliders='cuboid'
-      colliderNodes={[<CuboidCollider key={'cuboid'} args={[0.5, 0.5, 0.5]} />]}
-    >
+    <InstancedRigidBodies ref={rigidBodies} instances={instances} colliders='cuboid'>
       <instancedMesh
         ref={meshes}
         args={[undefined, undefined, data.length]}
