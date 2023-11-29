@@ -28,15 +28,7 @@ const AttractorItem: React.FC<Props> = (props) => {
   });
 
   return (
-    <RigidBody
-      linearDamping={4}
-      angularDamping={1}
-      friction={0.1}
-      ref={api}
-      colliders={'hull'}
-      position={position}
-      mass={0.00001}
-    >
+    <RigidBody linearDamping={4} angularDamping={1} friction={0.1} ref={api} colliders={'hull'} position={position}>
       {children}
     </RigidBody>
   );

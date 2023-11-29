@@ -18,7 +18,7 @@ const Pointer: React.FC = (props) => {
   });
 
   return (
-    <RigidBody ref={pointerRef} position={[0, 0, 0]} type='kinematicPosition' colliders={false} mass={0.0000001}>
+    <RigidBody ref={pointerRef} position={[0, 0, 0]} type='kinematicPosition' colliders={false}>
       <BallCollider args={[1]} />
       {/* <Attractor range={10} strength={-50} /> */}
     </RigidBody>
