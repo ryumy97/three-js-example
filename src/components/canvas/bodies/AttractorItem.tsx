@@ -1,6 +1,6 @@
 import { Triplet } from '@react-three/cannon';
 import { useFrame } from '@react-three/fiber';
-import { RigidBody } from '@react-three/rapier';
+import { RapierRigidBody, RigidBody, vec3 } from '@react-three/rapier';
 import React, { useMemo, useRef } from 'react';
 import * as THREE from 'three';
 
@@ -12,7 +12,7 @@ type Props = React.PropsWithChildren & {
 const AttractorItem: React.FC<Props> = (props) => {
   const { position, color, children } = props;
 
-  const api = useRef(null);
+  const api = useRef<RapierRigidBody>(null);
   const refState = useMemo(
     () => ({
       vec: new THREE.Vector3(),
@@ -23,7 +23,7 @@ const AttractorItem: React.FC<Props> = (props) => {
   useFrame((_, delta) => {
     if (api.current) {
       delta = Math.min(0.1, delta);
-      api.current?.applyImpulse(refState.vec.copy(api.current.translation()).negate().multiplyScalar(2));
+      api.current.applyImpulse(refState.vec.copy(vec3(api.current.translation())).negate().multiplyScalar(2), true);
     }
   });
 
@@ -35,7 +35,7 @@ const AttractorItem: React.FC<Props> = (props) => {
       ref={api}
       colliders={'hull'}
       position={position}
-      mass={1}
+      mass={0.00001}
     >
       {children}
     </RigidBody>
