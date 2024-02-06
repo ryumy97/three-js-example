@@ -8,8 +8,8 @@ const View = dynamic(() => import('@/components/canvas/View').then((mod) => mod.
 
 export default function page() {
   return (
-    <div className='relative h-screen w-screen'>
-      <View className={'absolute inset-0'}>
+    <div className='relative h-screen w-screen bg-white'>
+      <View className={'absolute inset-0'} orbit>
         <Suspense>
           <RapierAttractors />
         </Suspense>
